@@ -1,0 +1,45 @@
+﻿@model IEnumerable<VeloxPizza.Models.ProdottoAcquistato>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ordine.IndirizzoDiConsegna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prodotto.NomeProdotto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantita)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ordine.IndirizzoDiConsegna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prodotto.NomeProdotto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantita)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdProdottoAcquistato }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdProdottoAcquistato }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdProdottoAcquistato })
+        </td>
+    </tr>
+}
+
+</table>

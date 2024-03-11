@@ -1,0 +1,63 @@
+﻿@model IEnumerable<VeloxPizza.Models.Ordine>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Utente.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IndirizzoDiConsegna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataOrdine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsEvaso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrezzoTotale)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Utente.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndirizzoDiConsegna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOrdine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsEvaso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nota)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrezzoTotale)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdOrdine }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdOrdine }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdOrdine })
+        </td>
+    </tr>
+}
+
+</table>

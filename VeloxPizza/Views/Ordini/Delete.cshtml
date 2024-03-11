@@ -1,0 +1,72 @@
+﻿@model VeloxPizza.Models.Ordine
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ordine</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Utente.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Utente.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IndirizzoDiConsegna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IndirizzoDiConsegna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataOrdine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataOrdine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEvaso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsEvaso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrezzoTotale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrezzoTotale)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,66 @@
+﻿@model VeloxPizza.Models.Ordine
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ordine</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Utente.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Utente.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IndirizzoDiConsegna)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IndirizzoDiConsegna)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataOrdine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataOrdine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEvaso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsEvaso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrezzoTotale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrezzoTotale)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdOrdine }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
